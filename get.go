@@ -61,15 +61,11 @@ var httpClient = cleanhttp.DefaultClient()
 
 func init() {
 	httpGetter := &HttpGetter{
-		Netrc: true,
+		Netrc: false,
 	}
 
 	Getters = map[string]Getter{
 		"file":  new(FileGetter),
-		"git":   new(GitGetter),
-		"gcs":   new(GCSGetter),
-		"hg":    new(HgGetter),
-		"s3":    new(S3Getter),
 		"http":  httpGetter,
 		"https": httpGetter,
 	}
